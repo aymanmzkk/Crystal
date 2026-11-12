@@ -1,0 +1,61 @@
+import {
+  IconBarbell,
+  IconBed,
+  IconBook,
+  IconBrain,
+  IconBriefcase,
+  IconCake,
+  IconCalendar,
+  IconCar,
+  IconChecklist,
+  IconCode,
+  IconDroplet,
+  IconHeart,
+  IconHome,
+  IconLanguage,
+  IconMoon,
+  IconMusic,
+  IconPaw,
+  IconPlane,
+  IconRun,
+  IconSchool,
+  IconStar,
+  IconStethoscope,
+  IconSun,
+  IconUsers,
+  IconWallet,
+} from '@tabler/icons-react'
+import type { AppIcon } from '../modules/registry'
+
+// Iconos que se pueden elegir para calendarios, hábitos y rutinas. Se guarda el nombre (la clave) en la base de datos.
+export const CATEGORY_ICONS: Record<string, AppIcon> = {
+  sun: IconSun,
+  moon: IconMoon,
+  droplet: IconDroplet,
+  run: IconRun,
+  brain: IconBrain,
+  bed: IconBed,
+  language: IconLanguage,
+  calendar: IconCalendar,
+  school: IconSchool,
+  briefcase: IconBriefcase,
+  barbell: IconBarbell,
+  cake: IconCake,
+  wallet: IconWallet,
+  stethoscope: IconStethoscope,
+  plane: IconPlane,
+  checklist: IconChecklist,
+  heart: IconHeart,
+  home: IconHome,
+  users: IconUsers,
+  music: IconMusic,
+  book: IconBook,
+  code: IconCode,
+  paw: IconPaw,
+  car: IconCar,
+  star: IconStar,
+}
+
+export function getCategoryIcon(name: string | undefined): AppIcon {
+  return (name && CATEGORY_ICONS[name]) || IconCalendar
+}

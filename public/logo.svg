@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Crystal: una "C" con forma de hexágono tallado, como un cristal hecho de facetas -->
+  <defs>
+    <linearGradient id="line" x1="0.15" y1="0.05" x2="0.9" y2="0.95">
+      <stop offset="0" stop-color="#5ff0ff"/>
+      <stop offset="0.5" stop-color="#4d86ff"/>
+      <stop offset="1" stop-color="#b276ff"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="0.42" cy="0.45" r="0.55">
+      <stop offset="0" stop-color="#3f6dff" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#3f6dff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="9" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="512" height="512" rx="112" fill="#0b0d16"/>
+  <rect width="512" height="512" rx="112" fill="url(#halo)"/>
+
+  <g fill="none" stroke="url(#line)" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)">
+    <!-- Contorno de la C: hexágono exterior abierto a la derecha y hexágono interior -->
+    <path stroke-width="16" d="M420 168 L256 74 L96 166 L96 346 L256 438 L420 344 L338 300 L256 348 L174 300 L174 212 L256 164 L338 212 Z"/>
+    <!-- Facetas -->
+    <g stroke-width="9">
+      <path d="M256 74 L256 164"/>
+      <path d="M176 120 L256 164 M176 120 L174 212"/>
+      <path d="M338 120 L256 164 M338 120 L338 212"/>
+      <path d="M96 166 L174 212"/>
+      <path d="M96 256 L174 212 M96 256 L174 300"/>
+      <path d="M96 346 L174 300"/>
+      <path d="M176 392 L174 300 M176 392 L256 348"/>
+      <path d="M256 438 L256 348"/>
+      <path d="M338 392 L256 348 M338 392 L338 300"/>
+    </g>
+    <!-- Cortes finos en abanico: le dan el brillo de piedra tallada -->
+    <g stroke-width="5" stroke-opacity="0.75">
+      <path d="M256 74 L174 212 M256 74 L338 212"/>
+      <path d="M96 166 L174 300 M96 346 L174 212"/>
+      <path d="M256 438 L174 300 M256 438 L338 300"/>
+      <path d="M420 168 L338 120 M420 344 L338 392"/>
+    </g>
+  </g>
+</svg>
