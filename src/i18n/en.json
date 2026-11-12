@@ -943,7 +943,29 @@
     "giftIdeas_one": "{{count}} gift idea",
     "giftIdeas_other": "{{count}} gift ideas",
     "lastContact": "Last time",
-    "empty": "Add the important people so you don't forget their birthdays or lose touch."
+    "empty": "Add the important people so you don't forget their birthdays or lose touch.",
+    "import": {
+      "button": "Import",
+      "title": "Import contacts",
+      "fromPhone": "Pick contacts from the phone",
+      "fromPhoneHint": "The phone's address book opens and you choose who to bring (one or several).",
+      "fromFile": "Import a .vcf file",
+      "fromFileHint": "Also brings birthdays. On the phone: Contacts app → menu → Export (or Share). In Google Contacts: Export → vCard.",
+      "noPicker": "This browser can't open the address book (only Chrome for Android can). Use a .vcf file.",
+      "privacy": "Only the contacts you choose are read, and they are saved only in Crystal.",
+      "pickerError": "The phone's address book couldn't be opened.",
+      "none": "No contacts were found.",
+      "relationForNew": "Relationship for new ones",
+      "status": {
+        "new": "New",
+        "update": "Fills in data",
+        "same": "Already there"
+      },
+      "reviewHint": "Contacts you already have aren't changed: only missing data is filled in (phone, email or birthday).",
+      "save_one": "Import {{count}}",
+      "save_other": "Import {{count}}",
+      "done": "{{added}} new contacts · {{updated}} completed"
+    }
   },
   "household": {
     "shopping": "Shopping list",
