@@ -943,7 +943,29 @@
     "giftIdeas_one": "{{count}} idea de regalo",
     "giftIdeas_other": "{{count}} ideas de regalo",
     "lastContact": "Última vez",
-    "empty": "Añade a las personas importantes para no olvidar sus cumpleaños ni perder el contacto."
+    "empty": "Añade a las personas importantes para no olvidar sus cumpleaños ni perder el contacto.",
+    "import": {
+      "button": "Importar",
+      "title": "Importar contactos",
+      "fromPhone": "Elegir contactos del móvil",
+      "fromPhoneHint": "Se abre la agenda del móvil y eliges a quién traer (uno o varios).",
+      "fromFile": "Importar un archivo .vcf",
+      "fromFileHint": "Trae también los cumpleaños. En el móvil: app Contactos → menú → Exportar (o Compartir). En Google Contactos: Exportar → vCard.",
+      "noPicker": "Este navegador no deja abrir la agenda (solo funciona en Chrome para Android). Usa un archivo .vcf.",
+      "privacy": "Solo se leen los contactos que elijas, y se guardan únicamente en Crystal.",
+      "pickerError": "No se ha podido abrir la agenda del móvil.",
+      "none": "No se ha encontrado ningún contacto.",
+      "relationForNew": "Relación para los nuevos",
+      "status": {
+        "new": "Nuevo",
+        "update": "Completa datos",
+        "same": "Ya lo tienes"
+      },
+      "reviewHint": "Los que ya tienes no se cambian: solo se rellenan los datos que les faltan (teléfono, correo o cumpleaños).",
+      "save_one": "Importar {{count}}",
+      "save_other": "Importar {{count}}",
+      "done": "{{added}} contactos nuevos · {{updated}} completados"
+    }
   },
   "household": {
     "shopping": "Lista de la compra",

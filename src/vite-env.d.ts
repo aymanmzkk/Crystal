@@ -17,3 +17,17 @@ interface FileSystemHandle {
   queryPermission?: (descriptor: { mode: 'read' | 'readwrite' }) => Promise<PermissionState>
   requestPermission?: (descriptor: { mode: 'read' | 'readwrite' }) => Promise<PermissionState>
 }
+
+// Contact Picker API: elegir contactos del móvil (Chrome en Android). El usuario decide cuáles comparte.
+interface ContactsSelectResult {
+  name?: string[]
+  tel?: string[]
+  email?: string[]
+}
+interface ContactsManager {
+  getProperties(): Promise<string[]>
+  select(properties: string[], options?: { multiple?: boolean }): Promise<ContactsSelectResult[]>
+}
+interface Navigator {
+  contacts?: ContactsManager
+}

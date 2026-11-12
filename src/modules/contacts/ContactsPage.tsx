@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useSearchParams } from 'react-router'
 import { useTranslation } from 'react-i18next'
-import { IconCake, IconMessageCircle, IconPlus, IconSearch } from '@tabler/icons-react'
+import { IconCake, IconDeviceMobileDown, IconMessageCircle, IconPlus, IconSearch } from '@tabler/icons-react'
 import { btn, btnPrimary, field } from '../../components/ui'
 import { useContacts } from '../../db/hooks'
 import { updateRecord } from '../../db/repo'
@@ -9,6 +9,7 @@ import type { Contact } from '../../db/types'
 import { useNow } from '../../hooks/useNow'
 import { diffDays, parseKey, toDateKey } from '../../lib/dates'
 import { ContactPanel, RELATIONS } from './ContactPanel'
+import { ImportContactsPanel } from './ImportContactsPanel'
 import { ageOn, contactOverdue, nextBirthday } from './people'
 
 type Panel = { id: string } | { new: true } | null
@@ -21,6 +22,7 @@ export default function ContactsPage() {
   const [panel, setPanel] = useState<Panel>(null)
   const [search, setSearch] = useState('')
   const [relation, setRelation] = useState('')
+  const [importing, setImporting] = useState(false)
 
   // ?open=<id> abre una ficha (desde un cumpleaños del calendario)
   useEffect(() => {
@@ -68,6 +70,10 @@ export default function ContactsPage() {
           ))}
         </select>
         <span className="flex-1" />
+        <button type="button" onClick={() => setImporting(true)} className={btn}>
+          <IconDeviceMobileDown size={18} aria-hidden />
+          {t('contacts.import.button')}
+        </button>
         <button type="button" onClick={() => setPanel({ new: true })} className={btnPrimary}>
           <IconPlus size={18} aria-hidden />
           {t('contacts.new')}
@@ -184,6 +190,7 @@ export default function ContactsPage() {
       </main>
 
       {panel && <ContactPanel key={'id' in panel ? panel.id : 'new'} contact={panelContact} onClose={() => setPanel(null)} />}
+      {importing && contacts && <ImportContactsPanel existing={contacts} onClose={() => setImporting(false)} />}
     </div>
   )
 }
